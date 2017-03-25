@@ -1,0 +1,135 @@
+/* =============================================清楚默认样式============================================= */
+html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, hr, table, th, td, form, input, button, option 
+{
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+li {
+    list-style: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+    outline: none;
+}
+
+input, select, textarea, option, button{
+    outline: none
+}
+
+a, button {
+    cursor: pointer;
+    border: none;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+}
+/* =============================================基本样式============================================= */
+body{
+    font: 15px/26px 'Microsoft YaHei';
+}
+
+/* =============================================按钮样式============================================= */
+.btn {
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px; 
+    color: #fff;
+}
+
+.btn-blue
+{
+    background-color: #0f88eb;
+    border:  1px solid #0f88eb;
+}
+
+.btn-default{
+    padding:10px 14px;
+}
+
+.btn-lg
+{
+    width: 220px;
+    padding: 10px;
+}
+
+/* =============================================弹框样式============================================= */
+.do_not_scroll{
+    overflow: hidden;
+    height: 100%;
+}
+
+.modal_layer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0,0,0,.65);
+    transition: background-color .3s ease-out;
+    z-index: 10;
+}
+
+.popup_box{
+    width: 536px;
+    border-radius:2px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+    margin:0 auto;
+    background:#fff;
+    z-index: 100;
+}
+
+.popup_title{
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #262626;
+    text-align: center;
+}
+
+.popup_subtitle{
+    padding: 0 38px;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #8590a6;
+    text-align: center;
+}
+
+.popup_form{
+    padding: 0 24px 32px;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.popup_cancel_btn{
+    position: absolute;
+    top: 8px;
+    right: -60px;
+    padding: 12px;
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+}
+

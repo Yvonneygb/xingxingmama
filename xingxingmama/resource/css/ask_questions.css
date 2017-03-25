@@ -1,0 +1,49 @@
+.btn_box{width: 100px;margin: 100px auto;}
+
+
+.problem_title, .topic, .problem_description_box, .anonymous_select, .problem_description{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	font: 14px/26px 'Microsoft YaHei';
+	margin-bottom:12px;
+}
+.margin_bot{
+	margin-bottom: 47px;
+}
+.problem_title, .topic, .problem_description{
+	border-radius:3px;
+	border: 1px solid #e7eaf1;
+}
+
+.problem_description_box span{
+	padding-left: 12px;
+}
+
+.problem_description_box{
+	margin-top: 24px;
+}
+.problem_description{
+	margin-top: 12px;
+}
+
+.anonymous_select{
+	color: #8590a6;
+}
+
+.btn_submit{
+	display: block;
+	margin: 48px auto 16px;
+}
+
+.input_padding{
+	padding:8px 12px;
+}
+
+.err{
+	text-align: right;
+	color: red;
+	margin-bottom:12px;
+	display: none;
+	transition: all 1s; 
+}
