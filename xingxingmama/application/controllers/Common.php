@@ -61,8 +61,8 @@ class Common extends CI_Controller
           'add_time'=>$answer_item['add_time']
         );
         // print_r($data);
-        print_r($answer_item['name']);
-        //$this->load->view('question', $data);
+        // print_r($answer_item['name']);
+        $this->load->view('question', $data);
     }
 
     public function answer_submit()
