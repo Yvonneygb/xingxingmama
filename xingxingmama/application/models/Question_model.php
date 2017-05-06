@@ -121,7 +121,7 @@ class Question_model extends CI_Model{
     //插入评论到数据库
     public function save_comment($comment_uid,$answer_id,$cotent){
       $data = array(
-        /*'answer_id' => 2,*/s
+        /*'answer_id' => 2,*/
         'comment_uid'=>$comment_uid,
         'answer_id'=>$answer_id,
         'comment_content'=>$cotent,
