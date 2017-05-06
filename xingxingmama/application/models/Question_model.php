@@ -45,8 +45,11 @@ class Question_model extends CI_Model{
   {
     $this->db->join('user', 'answer.answer_uid = user.id' , 'left');
     $data = array('answer.question_id' => $question_id);
-    $query = $this->db->select('answer.answer_uid, answer.agree_count, answer.answer_content, answer.add_time, user.name, user.signature, user.icon');
-    return $this->db->get_where('answer', $data)->result_array();
+
+    /*$query = $this->db->select('answer.answer_uid, answer.agree_count,
+     answer.answer_content, answer.add_time, user.name, user.signature, user.icon');
+*/
+    return   $this->db->get_where('answer', $data)->result_array();
   }
 
   public function save_agreements($agree_count,$answer_id,$uid)
@@ -106,7 +109,7 @@ class Question_model extends CI_Model{
 
     public function add_integrations($uid,$integration)
     {
-      
+
       $this->db->query("UPDATE `user` SET integration = integration + $integration WHERE id = $uid");
       //邀请新的用户 则 邀请者与被邀者都+10
       // 举报用户+1分
@@ -115,5 +118,22 @@ class Question_model extends CI_Model{
       //回答+2分 此回答有点赞则按10个赞+1分
       //充值则1元=10分
     }
-
+    //插入评论到数据库
+    public function save_comment($comment_uid,$answer_id,$cotent){
+      $data = array(
+        /*'answer_id' => 2,*/s
+        'comment_uid'=>$comment_uid,
+        'answer_id'=>$answer_id,
+        'comment_content'=>$cotent,
+        'add_time'=>time()
+      );
+      // add_integrations($answerer_uid,2);//回答加2分
+      return $this->db->insert('comment', $data);
+    }
+    //得到某个回答的评论
+    public function get_comment($answerid){
+      $this->db->join('user', 'comment.comment_uid = user.id' , 'left');
+      $data = array('comment.answer_id' => $answerid);
+      return   $this->db->get_where('comment', $data)->result_array();
+    }
 }

@@ -54,7 +54,7 @@
 				</div>
 
 				<div class="AnswerForm-footer">
-					<input type="submit" value="提交问题">
+					<input type="submit" value="提交回答">
 				</div>
 			</form>
 
