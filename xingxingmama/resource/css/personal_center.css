@@ -1,0 +1,304 @@
+body{
+	background-color:#f7f8fa;
+}
+
+.top{
+	height:250px;
+	margin-left:170px;
+	margin-right:170px;
+}
+
+.top , .under_left  , .personal_achievement_box , .personal_achievement_title_box, .attention ,  .under_navigation{
+	background: #fff;
+    border: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,37,55,.05);
+    box-sizing: border-box;
+}
+
+.top_pule_color{
+	height:125px;
+	background-color:#8590a6;
+}
+
+.avatar {
+	display:inline;
+	height:180px;
+	width:180px;
+	margin-left:16px;
+	margin-top:-60px;
+	float:left;
+	background-color:#FFFFFF;
+}
+
+ img{
+	 margin-top:5px;
+	 margin-left:5px;
+	 height:170px;
+	 width:170px;
+	 
+ }
+
+.name_and_information_box{
+	display:inline;
+	height:50px;
+	margin-left:20px;
+	margin-top:20px;
+}
+
+.name_box , .information_box{
+	height:25px;
+	margin-left:250px;	
+}
+
+.name_box{
+	margin-bottom:10px;
+}
+
+.name{
+	font-size:20px;
+	color:#000000;
+	text-decoration:bold;	
+}
+
+.information{
+	font-size:15px;
+	color:#8590a6;
+}
+
+.add_photo_edit_information{
+	float:right;
+	height:200px;
+	width:200px;
+	margin-right:20px;
+	margin-top:-180px;
+	
+}
+
+.add_photo , .edit_information{
+	height:34px;
+	width:138px;	
+	text-align: center;
+    cursor: pointer;    
+}
+
+.add_photo{
+	background-color: #8590a6;
+	color:#ccd8e1;
+    border: 1px solid #ccd8e1;  /*荧光蓝*/
+    border-radius: 3px;
+}
+
+svg{
+	display:inline;
+	float:left;
+	height:20px;
+	width:20px;
+	margin-top:8px;
+    margin-left:10px;
+	fill: currentColor;
+}
+
+.add_photo_words{
+	
+	float:right;
+	margin-right:10px;
+	margin-top:7px;
+}
+
+.edit_information{
+	margin-top:120px;
+	background-color:#FFFFFF;
+	color: #0f88eb;/*蓝色*/
+    border: 1px solid #0f88eb;
+	border-radius: 3px;
+}
+
+
+.under{
+	margin-top:20px;
+	margin-left:170px;
+	margin-right:170px;
+	height:300px;
+}
+
+.under_left{	
+	float:left;
+	width:694px;
+	height:600px;
+}
+
+.under_right{
+	float:right;
+	width:296px;
+	height:200px;
+}
+
+.navigation_box{
+	height:20px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.navigation{
+	font-size:18px;
+	margin-left:25px;
+	font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.navigation_number{
+	font-size:15px;
+	color:#8590a6;
+}
+
+.my_dynamic_box , .content_of_question_have_focus_on_box{
+	margin:0 auto;
+	width:660px;
+}
+
+.my_dynamic_title_box{
+	height:40px;
+	margin-bottom:10px;
+	margin-left:10px;
+	margin-top:10px;
+	border-bottom: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,37,55,.05);
+}
+
+.my_dynamic_title{	
+	font-size:16px;
+	font-weight:900;
+}
+
+.questions_have_focus_on_title_box{
+	margin-left:10px;
+	margin-top:10px;
+}
+	
+.questions_have_focus_on_title , .add_focus_on_time{	
+	font-size:14px;
+	color:#8590a6;
+}
+
+.content_of_question_have_focus_on_box{
+	margin-top:10px;
+	margin-left:10px;
+}
+
+.content_of_question_have_focus_on_box_every{
+	height:40px;
+	border-bottom: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,37,55,.05);
+}
+
+.content_of_question_have_focus_on{
+	float:left;
+	font-size:18px;
+	font-weight:900;
+}
+
+.add_focus_on_time{
+	float:right;
+	margin-top:5px;
+	margin-right:10px;
+}
+
+.personal_achievement_box{
+	width:296px;
+	height:100px;
+}
+
+.personal_achievement_title_box , .personal_achievement_content_box{
+	width:296px;
+	height:50px;
+	text-align:center;
+}
+
+.personal_achievement_title , .personal_achievement_content{
+	font-size:16px;
+}
+
+.attention{
+	width:296px;
+	height:80px;
+	margin-top:20px;
+}
+
+.number_of_have_pay_attention_to_box{
+	float:left;
+}
+
+.number_of_have_pay_attention_to_title{
+	margin-top:10px;
+	margin-left:50px;
+	color:#8590a6;
+}
+
+.number_of_have_pay_attention_to{
+	margin-left:64px;
+}
+
+.number_of_pay_attention_to_me_box{
+	float:right;
+}
+
+.number_of_pay_attention_to_me_title{
+	margin-top:10px;
+	margin-right:50px;
+	color:#8590a6;
+}
+
+.number_of_pay_attention_to_me{
+	margin-right:0px;
+}
+
+.cutting_line{
+	height:60px;
+	width:2px;
+	vertical-align:middle;
+	background-color:#8590a6;
+}
+
+.about_focus{
+	float:right;
+	width:296px;	
+	height:400px;	
+	margin-top:20px;
+}
+
+.focus_topic_box , .focus_column_box , .focus_question_box , .focus_favorites_box{
+	height:50px;
+	border-bottom:1px solid #f0f2f7;
+}
+
+.focus_top_title , .focus_column_title , .focus_question_title , .focus_favorites_title{
+	float:left;
+	color:#555;
+	font-size:14px;
+}
+
+.focus_top_number , .focus_column_number , .focus_question_number , .focus_favorites_number{
+	float:right;
+	font-size:14px;
+	color:#8590a6;
+}
+
+	a.navigation:link {color:#999;}		/* 未被访问的链接 */
+	a.navigation:visited {color:#999;}	/* 已被访问的链接 */
+	a.navigation:hover {text-decoration:underline;   color:#4169E1;}	/* 鼠标指针移动到链接上 */
+	a.navigation:active {color:#4169E1;}	/* 正在被点击的链接 */
+
+
+
+
+
+
+
+
+
+
+
