@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" >
     <title>个人中心</title>
-	<link rel="stylesheet" href="http://127.0.0.1/xingxingmama/xingxingmama/resource/css/personal_center.css">
+	<link rel="stylesheet" href="personal_center.css">
 	<link rel="stylesheet" href="http://127.0.0.1/xingxingmama/xingxingmama/resource/css/style1.css">
 
 	

@@ -11,17 +11,11 @@
 .margin_bot{
 	margin-bottom: 47px;
 }
-.problem_title, .topic, .problem_description{
-	border-radius:3px;
-	border: 1px solid #e7eaf1;
-}
 
-.problem_description_box span{
-	padding-left: 12px;
-}
+
 
 .problem_description_box{
-	margin-top: 24px;
+	margin-top: 12px;
 }
 .problem_description{
 	margin-top: 12px;

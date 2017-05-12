@@ -53,14 +53,19 @@ class Common extends CI_Controller
         $answer_item['agree_count'] = '1112';
         $answer_item['add_time'] = '2017-5-22';
 
-        $data['answer_item'] = array(
+        $arr = array(
           'name'=>$answer_item['name'],
           'signature'=>$answer_item['signature'],
           'content'=>$answer_item['content'],
           'agree_count'=>$answer_item['agree_count'],
           'add_time'=>$answer_item['add_time']
         );
-        // print_r($data);
+		
+		$data['answer_item'] = array();
+		array_push($data['answer_item'], $arr, $arr);
+		
+		
+         //print_r($data);
         // print_r($answer_item['name']);
         $this->load->view('question', $data);
     }

@@ -6,7 +6,7 @@ html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, hr, table, t
 }
 
 body{
-	color:#d4d4d4;
+	background:#f7f8fa;
 }
 
 table {
@@ -42,6 +42,9 @@ input {
     background-color: transparent;
 }
 /* =============================================基本样式============================================= */
+
+
+
 body{
     font: 15px/26px 'Microsoft YaHei';
 }

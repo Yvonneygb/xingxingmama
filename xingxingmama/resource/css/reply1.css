@@ -9,6 +9,25 @@
     box-sizing: border-box;
 }
 
+.question , .check_all_answer_box, .all_2 {
+	background: #fff;
+    border: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,37,55,.05);
+    box-sizing: border-box;
+}
+
+.check_all_answer_box{	
+	height:40px;
+	margin-top:10px;
+	text-align:center;
+	background:#FFFFFF;
+}
+	
+.check_all_answer{
+	color:#3e7ac2;	
+}
+
 .AnswerAdd-header{
 	position: relative;
 	padding: 16px 20px;
@@ -30,6 +49,7 @@
 	right:16px;
 	top: 20px;
 }
+
 
 .AuthorInfo-title{
 	font-size: 15px;
