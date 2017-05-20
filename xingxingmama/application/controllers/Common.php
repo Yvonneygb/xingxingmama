@@ -10,11 +10,17 @@ class Common extends CI_Controller
         $this->load->library('session');
     }
 
+	//提问
     public function ask_questions()
     {
         $this->load->view('ask_questions');
     }
-
+     //加载主页
+	public function page(){
+		$this->load->view('page');
+	}
+	
+	//问题提交
     public function ask_questions_submit()
     {
         $data['problem_title'] = $this->input->post('problem_title');
@@ -24,18 +30,19 @@ class Common extends CI_Controller
 
         if (!$data['problem_title'] || !$data['topic'] || mb_strlen($data['problem_title'], 'utf8') >= 256 || mb_strlen($data['topic'], 'utf8') >= 128 ||  0 == preg_match('/^[\-+]?[0-9]*\.?[0-9]+$/', $data['topic']))
         {
-            $this->ask_questions();
-            return;
+           // $this->ask_questions();
+           // return;
         }
 
         $data['asker_uid'] = $this->session->USER_ID;//虚拟用户id
 
         $this->Question_model->create_question($data);
-        $this->Question_model->add_integrations($this->session->USER_ID, 2);//提问+2分
+       // $this->Question_model->add_integrations($this->session->USER_ID, 2);//提问+2分
         print_r('<script>alert("成功")</script>');
         print_r($data);
     }
 
+	//跳转到某个问题的界面
     public function question($id)
     {
         $data = $this->Question_model->question($id);
@@ -44,44 +51,27 @@ class Common extends CI_Controller
             show_404();
             return;
         }
-        $data['id'] = $id;
-
-        // answer
-        $answer_item['name'] = 'zhangshan2';
-        $answer_item['signature'] = 'hello2';
-        $answer_item['content'] = '012352';
-        $answer_item['agree_count'] = '1112';
-        $answer_item['add_time'] = '2017-5-22';
-
-        $arr = array(
-          'name'=>$answer_item['name'],
-          'signature'=>$answer_item['signature'],
-          'content'=>$answer_item['content'],
-          'agree_count'=>$answer_item['agree_count'],
-          'add_time'=>$answer_item['add_time']
-        );
-		
-		$data['answer_item'] = array();
-		array_push($data['answer_item'], $arr, $arr);
-		
-		
-         //print_r($data);
+        // print_r($data);
         // print_r($answer_item['name']);
-        $this->load->view('question', $data);
+		//将该问题的id缓存进session，且名称是myquestion_id,然后就可以在其他php界面访问该id
+		 $this->session->set_userdata('myquestion_id', $id); 
+        $this->load->view('question');
     }
 
+	//提交回答
     public function answer_submit()
     {
       $question_id = $this->input->post('id');
-      $text = $this->input->post('text');
+      $text = $this->input->post('content');
       $anonymous = 1; // 1. 匿名 0. 实名
       $answerer_uid = $this->session->USER_ID;
-      $this->Question_model->save_answer($question_id, $text, $anonymous,$answerer_uid);
-      print_r($answerer_uid);
+      $this->Question_model->save_answer($question_id, $text,$answerer_uid, $anonymous);
       $this->Question_model->add_integrations($answerer_uid, 2);//回答加2分
+	  $this->question($this->session->myquestion_id);
     }
 
 
+	//点赞
      public function agree_submit()
      {
        $answer_id = 1;
@@ -90,6 +80,7 @@ class Common extends CI_Controller
        $this->Question_model->save_agreements($agree_count,$answer_id,$uid);
      }
 
+	 //点赞数量
     public function agree_count()
      {
        $answer_id = 1;
@@ -97,6 +88,7 @@ class Common extends CI_Controller
        print_r($data);
      }
 
+	 //收藏
      public function collect()
      {
        $uid = $this->session->USER_ID;
@@ -104,6 +96,7 @@ class Common extends CI_Controller
        $this->Question_model->collect_status($uid,$answer_id);
      }
 
+	 //
      public function collections()
      {
        $uid = $this->session->USER_ID;
@@ -120,25 +113,22 @@ class Common extends CI_Controller
        print_r($data);
      }
 
+	 //登录
      public function set_user($user_id)
-     {
+     {	 
        //存入session属性
        $this->session->set_userdata('USER_ID', $user_id);
 
        echo $this->session->USER_ID;
      }
+ 
 
-     public function answer()
-     {
-       $question_id = '8';
-       $data = $this->Question_model->get_answers($question_id);
-       print_r($data);
-     }
-//显示某个问题所有回答
+	 //显示某个问题所有回答
      public function show_answers(){
        $this->load->view('show_answers');
      }
-//评论接口
+
+	 //评论接口
      public function set_comment()
      {
        //获取session的属性
@@ -174,4 +164,5 @@ class Common extends CI_Controller
        $infordata=$this->Question_model->get_user($username);
        return $infordata;
      }
+	 
 }

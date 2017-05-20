@@ -8,12 +8,11 @@ class Question_model extends CI_Model{
 
     }
 
-	//储存新提交的问题到数据库
 	public function create_question($data)
 	{
 		$arr = array(
 			'title' => $data['problem_title'],
-			'describe' =>$data['problem_description'],
+			'content' =>$data['problem_description'],
 			 'tag' => $data['topic'],
 			'anonymous' => $data['anonymous'],
 			'asker_uid' => $data['asker_uid']
@@ -21,22 +20,16 @@ class Question_model extends CI_Model{
 		$this->db->insert('question', $arr);
 	}
 
-	//从数据库获取某问题的全部资料
 	public function question($id)
 	{
 		return $this->db->get_where('question',array('id' => $id))->row_array();
 	}
-	
-	//获取数据库的所有问题
-    public function get_questions(){
-		return $this->db->get_where('question')->result_array();
-	}
 
 
-	//保存某问题的回答到数据库
-	public function save_answer($question_id, $text,$answerer_uid,$anonymous)
-	{
-		$data = array(
+
+  public function save_answer($question_id, $text, $anonymous,$answerer_uid)
+  {
+    $data = array(
       /*'answer_id' => 2,*/
       'question_id'=>$question_id,
       'answer_content'=>$text,
@@ -48,7 +41,6 @@ class Question_model extends CI_Model{
     return $this->db->insert('answer', $data);
   }
 
-  //获取某个问题的所有答案
   public function  get_answers($question_id)
   {
     $this->db->join('user', 'answer.answer_uid = user.id' , 'left');
@@ -118,7 +110,7 @@ class Question_model extends CI_Model{
     public function add_integrations($uid,$integration)
     {
 
-      //$this->db->query("UPDATE `user` SET integration = integration + $integration WHERE id = $uid");
+      $this->db->query("UPDATE `user` SET integration = integration + $integration WHERE id = $uid");
       //邀请新的用户 则 邀请者与被邀者都+10
       // 举报用户+1分
       // 办活动+15分
@@ -126,9 +118,6 @@ class Question_model extends CI_Model{
       //回答+2分 此回答有点赞则按10个赞+1分
       //充值则1元=10分
     }
-	
-	
-	
     //保存评论到数据库
     public function save_comment($comment_uid,$answer_id,$cotent){
       $data = array(
@@ -141,14 +130,12 @@ class Question_model extends CI_Model{
       // add_integrations($answerer_uid,2);//回答加2分
       return $this->db->insert('comment', $data);
     }
-	
     //得到某个回答的评论
     public function get_comment($answerid){
       $this->db->join('user', 'comment.comment_uid = user.id' , 'left');
       $data = array('comment.answer_id' => $answerid);
       return   $this->db->get_where('comment', $data)->result_array();
     }
-	
     //创建个人信息到数据库
     public function create_information($data){
       $userinfor = array('name'=>$data['name'],
@@ -177,8 +164,8 @@ class Question_model extends CI_Model{
      }
 
     }
-    public function get_user($uid){
-      $data = array('user.platform_id' => $uid);
+    public function get_user($username){
+      $data = array('user.name' => $username);
       return  $this->db->get_where('user',$data)->row_array();
     }
 }

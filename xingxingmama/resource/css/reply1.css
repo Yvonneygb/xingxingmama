@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-.question , .check_all_answer_box, .all_2 {
+.question , .check_all_answer_box, .all_2  {
 	background: #fff;
     border: 1px solid #e7eaf1;
     border-radius: 2px;

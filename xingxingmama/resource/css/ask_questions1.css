@@ -1,7 +1,7 @@
 .btn_box{width: 100px;margin: 100px auto;}
 
 
-.problem_title, .topic, .problem_description_box, .anonymous_select, .problem_description{
+.problem_title, .topic, .problem_description_box, .anonymous_select, .problem_description {
 	display: block;
 	width: 100%;
 	box-sizing: border-box;

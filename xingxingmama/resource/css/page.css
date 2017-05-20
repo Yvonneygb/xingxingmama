@@ -1,0 +1,190 @@
+.zu-top{
+	height:40px;
+	width:1000px;
+	background: linear-gradient(to bottom,#086ed5,#055db5);
+    border-bottom: 1px solid #044e97;
+    box-shadow: 0 1px 2px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+div{
+	display:block;
+}
+
+.all_box{
+	width:1000px;
+	background-color: white;
+	border: 1px solid #d4d4d4;
+	border-radius: 4px;
+}
+	.all{
+		width:900px;
+		margin:0 auto;
+		border-bottom: 1px solid #d4d4d4;
+		margin-top:10px;
+		margin-bottom:10px;
+		margin-left:10px;
+		
+	}
+	
+	.avatar{
+		display: block;
+		width: 38px;
+		height: 38px;
+		float: left;
+		margin: 3px 0 0;
+	}
+	
+	.right{
+		width:800px;
+		padding:10px; 
+		margin-left: 48px;
+	}
+	
+	
+	img{
+		display: block;
+		width: 38px;
+		height: 38px;	
+		margin-top:15px;
+		horizontal-align:middle;
+	}
+	.question{
+		color:#259;<!--蓝色-->
+		font-weight: 700;
+		font-size: 14px;
+		
+	}
+	<!--显示全部-->
+	.xianshiquanbu{
+		text-decoration:none;
+		font-size:10px;		
+	}
+	
+	
+	.xiamianlianjie
+	{
+		
+		margin-left:10px;
+		font-size:10px;
+		text-decoration:none;
+	}
+	
+	a.xianshiquanbu.link{color:#4169E1;}
+	a.xianshiquanbu.visited{color:#999;}
+	
+	a.xiamianlianjie:link {color:#999;}		/* 未被访问的链接 */
+	a.xiamianlianjie:visited {color:#999;}	/* 已被访问的链接 */
+	a.xiamianlianjie:hover {text-decoration:underline;   color:#4169E1;}	/* 鼠标指针移动到链接上 */
+	a.xiamianlianjie:active {color:#4169E1;}	/* 正在被点击的链接 */
+		
+	.laiyuan
+	{
+		color:#999;	<!--灰色-->	
+		font-size:10px;
+		
+		
+	}
+	.haha
+	{
+		height:5px;
+		vertical-align:middle;	
+	}
+	
+	.dibu
+	{
+		margin-bottom:10px;
+	}
+	
+	
+	
+
+	
+	.zhengwen{
+		display:inline;
+	}
+	
+	
+	.button_dianzan{
+		float: left;
+		margin-left: -60px;
+		display: block;		
+		height:24px;
+		width:38px;
+	}
+	
+	.button_up{
+		height: 24px;
+		width: 38px;	
+		vertical-align:middle;
+		background: #eff6fa;	
+		color: #698ebf;
+		
+		border-radius: 3px;<!--圆角-->		
+		cursor: pointer;<!--设定鼠标在上方时，是手指的状态-->
+		font-weight: 500;
+		text-align: center;
+		position: relative;	
+		font: 13.3333px Arial;	
+	}
+	
+	
+	.ask_anser{
+		margin-left:58px;
+		margin-bottom:30px;
+		width:230px;
+		height: 48px;	
+		background: #fafafa;
+		border: 1px solid #f0f0f0;
+		border-radius: 4px;
+		position: relative;	
+		
+		
+		
+	}
+	.list{
+		width:230px;
+		height: 48px;
+		display: block;
+		
+		
+		
+	}
+	.list_item_ask_left{
+		width:115px;
+		height: 48px;		
+		list-style: none;		
+		position: relative;
+		font-size: 14px;
+		float: left;
+		display: list-item;
+		
+	}
+	
+	.list_item_anser_right{
+		width:115px;
+		height: 48px;		
+		list-style: none;
+		position: relative;
+		font-size: 14px;
+		float: left;
+		display: list-item;
+	}
+	
+	.list_item_ask,.list_item_anser{
+		width:56px;
+		height: 48px;
+		cursor:pointer;
+		text-decoration: none;
+		color: #6c829f;<!--浅蓝色-->
+		display: inline-block;		
+	}
+	.list_item_ask_img,.list_item_anser_img{
+		width: 24px;
+		height: 24px;		
+		display: inline-block;
+		vertical-align: middle;
+		background-position: -148px -30px;
+		<!--background-image: url(page2.jpg);-->
+		background-repeat: no-repeat;
+	}	
+	
