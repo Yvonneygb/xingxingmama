@@ -147,4 +147,31 @@ class Common extends CI_Controller
        $answer_id=$this->input->post('answersid');
        $this->Question_model->save_comment($comment_uid,$answer_id,$cotent);
      }
+     //创建个人信息
+     //判断是否重复数据，例如用户名
+    public function set_information(){
+     $username=$this->input->post('username');
+     if($this->Question_model->judge_username($username)){
+      //报错处理
+           print_r('<script>alert("用户名重复")</script>');
+           return;
+     }
+    $infordata = array('name' =>username ,
+                   'signature'=>$this->input->post('signature'),
+                   'platform_id'=>$this->input->post('platform_id'),
+                  'icon'=>$this->input->post('icon'),
+                  'integration'=>$this->input->post('integration'),
+                  'city'=>$this->input->post('city'),
+                  'sex'=>$this->input->post('sex'),
+                  'balance'=>$this->input->post('balance'),
+                  'child_age'=>$this->input->post('child_age'),
+                  'child_situation'=>$this->input->post('child_situation'),
+                  'autism_degree'=>$this->input->post('autism_degree')
+                );
+                $this->Question_model->create_information($infordata);
+     }
+     public function get_user($username){
+       $infordata=$this->Question_model->get_user($username);
+       return $infordata;
+     }
 }

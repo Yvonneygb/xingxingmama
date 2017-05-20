@@ -118,7 +118,7 @@ class Question_model extends CI_Model{
       //回答+2分 此回答有点赞则按10个赞+1分
       //充值则1元=10分
     }
-    //插入评论到数据库
+    //保存评论到数据库
     public function save_comment($comment_uid,$answer_id,$cotent){
       $data = array(
         /*'answer_id' => 2,*/
@@ -135,5 +135,37 @@ class Question_model extends CI_Model{
       $this->db->join('user', 'comment.comment_uid = user.id' , 'left');
       $data = array('comment.answer_id' => $answerid);
       return   $this->db->get_where('comment', $data)->result_array();
+    }
+    //创建个人信息到数据库
+    public function create_information($data){
+      $userinfor = array('name'=>$data['name'],
+                         'signature' =>$data['signature'] ,
+                          'platform_id'=>$data['platform_id'],
+                         'icon'=>$data['icon'],
+                         'integration'=>$data['integration'],
+                         'city'=>$data['city'],
+                         'sex'=>$data['sex'],
+                         'balance'=>$data['balance'],
+                         'child_age'=>$data['child_age'],
+                         'child_situation'=>$data['child_situation'],
+                         'autism_degree'=>$data['autism_degree'] );
+        return $this->db->insert('user',$data);
+    }
+    public function change_information(){
+
+    }
+    //判断用户名是否重复
+    public function judge_username($username){
+     $data = array('user.name' => $username);
+     if($this->db->get_where('user',$data)){
+       return true;
+     }else {
+       return false;
+     }
+
+    }
+    public function get_user($username){
+      $data = array('user.name' => $username);
+      return  $this->db->get_where('user',$data)->row_array();
     }
 }
