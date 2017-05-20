@@ -34,7 +34,7 @@ CREATE TABLE `agree` (
 DROP TABLE IF EXISTS `answer`;
 
 CREATE TABLE `answer` (
-  `answer_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '回答id',
+  `36` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '回答id',
   `question_id` int(11) unsigned NOT NULL COMMENT '问题id',
   `answer_content` text COMMENT '回答内容',
   `add_time` int(10) DEFAULT '0' COMMENT '添加时间',
@@ -45,7 +45,7 @@ CREATE TABLE `answer` (
   `uninterested_count` int(11) DEFAULT '0' COMMENT '用户不感兴趣，则他再也看不到',
   `force_fold` tinyint(1) DEFAULT '0' COMMENT '强制折叠',
   `anonymous` tinyint(1) DEFAULT '0' COMMENT '匿名',
-  PRIMARY KEY (`answer_id`),
+  PRIMARY KEY (`36`),
   KEY `question_id` (`question_id`),
   KEY `agree_count` (`agree_count`),
   KEY `against_count` (`against_count`),
@@ -58,7 +58,7 @@ CREATE TABLE `answer` (
 
 /*Data for the table `answer` */
 
-insert  into `answer`(`answer_id`,`question_id`,`answer_content`,`add_time`,`against_count`,`agree_count`,`answer_uid`,`comment_count`,`uninterested_count`,`force_fold`,`anonymous`) values 
+insert  into `answer`(`36`,`question_id`,`answer_content`,`add_time`,`against_count`,`agree_count`,`answer_uid`,`comment_count`,`uninterested_count`,`force_fold`,`anonymous`) values 
 (1,8,'very good',1491625100,0,2,110,0,0,0,1),
 (2,1,'',1491625440,0,0,110,0,0,0,1),
 (3,1,'',1491627133,0,0,110,0,0,0,1),
@@ -187,25 +187,32 @@ insert  into `question`(`id`,`title`,`content`,`tag`,`asker_uid`,`anonymous`,`an
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `signature` text,
-  `platform_id` text,
-  `icon` blob,
-  `integration` int(11) DEFAULT NULL,
-  `city` text,
-  `sex` tinyint(4) DEFAULT NULL,
-  `acount_validation` tinyint(4) DEFAULT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户排序的id',
+  `name` text NOT NULL COMMENT '用户名字',
+  `signature` text COMMENT '个性签名',
+  `platform_id` text COMMENT '用户的id',
+  `icon` blob COMMENT '用户图标',
+  `integration` int(11) DEFAULT NULL COMMENT '用户积分',
+  `city` text COMMENT '用户城市',
+  `sex` enum('男','女','其他') DEFAULT NULL COMMENT '用户性别',
+  `account_validation` tinyint(4) DEFAULT NULL,
   `balance` int(11) DEFAULT NULL COMMENT '充值余额',
+  `child_age` tinyint(4) DEFAULT NULL COMMENT '孩子年龄',
+  `child_situation` text COMMENT '孩子情况',
+  `autism_degree` enum('轻度','中度','重度','其他') DEFAULT NULL COMMENT '自闭程度',
+  `comment_number` int(11) NOT NULL COMMENT '评论个数',
+  `answer_number` int(11) NOT NULL COMMENT '回答个数',
+  `question_number` int(11) NOT NULL COMMENT '问题个数',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=113 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`name`,`signature`,`platform_id`,`icon`,`integration`,`city`,`sex`,`acount_validation`,`balance`) values 
-(110,'david','hhh','111223',' ',30,'jiangmen',0,0,NULL),
-(4,'david','hhh','111223',' ',26,'jiangmen',0,0,NULL),
-(5,'david','hhh','111223',' ',12,'jiangmen',1,0,NULL);
+insert  into `user`(`id`,`name`,`signature`,`platform_id`,`icon`,`integration`,`city`,`sex`,`account_validation`,`balance`,`child_age`,`child_situation`,`autism_degree`,`comment_number`,`answer_number`,`question_number`) values 
+(110,'david','hhh','111223',' ',30,'jiangmen','男',0,NULL,NULL,NULL,'其他',0,0,0),
+(4,'david','hhh','111223',' ',26,'jiangmen','男',0,NULL,NULL,NULL,'其他',0,0,0),
+(5,'david','hhh','111223',' ',12,'jiangmen','其他',0,NULL,NULL,NULL,'其他',0,0,0),
+(112,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
